@@ -18,6 +18,7 @@ from django.urls import path
 
 
 from AdminManagement import views as admin_views
+from CommentManagement import views as comment_views
 
 
 urlpatterns = [
@@ -25,4 +26,5 @@ urlpatterns = [
 
 
     path('adminlist/', admin_views.showAdmin, name='Admin'),
+    path('commentlist/', comment_views.showComment, name='Comment'),
 ]
