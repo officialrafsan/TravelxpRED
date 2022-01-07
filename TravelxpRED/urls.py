@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 
+from django.urls import include
+from django.conf import settings
+
 from AdminManagement import views as admin_views
 from CommentManagement import views as comment_views
 from PostManagement import views as post_views
@@ -27,6 +30,11 @@ urlpatterns = [
 
 
     path('adminlist/', admin_views.showAdmin, name='Admin'),
-    path('commentlist/', comment_views.showComment, name='Comment'),
-    path('postlist/', post_views.showPost, name='Post'),
+    path('user/', user_views.showUser, name='User'),
+    path('insertuser/', user_views.insertUser, name='insertUser'),
+    path('registration/', user_views.registration, name='registration'),
+    path('comment/', comment_views.showComment, name='Comment'),
+    path('post/', post_views.showPost, name='Post'),
+    path('accounts/', include('django.contrib.auth.urls'))
+
 ]
