@@ -12,3 +12,6 @@ class Post(models.Model):
     Post_description = models.TextField(max_length=1000000)
 
     User = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.Post_title
